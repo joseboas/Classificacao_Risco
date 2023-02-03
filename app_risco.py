@@ -1,3 +1,5 @@
+#pip install plotly
+#pip install streamlit
 import pandas as pd
 import streamlit as st
 import plotly.express as px
@@ -45,7 +47,9 @@ st.markdown("Este é um Aplicativo utilizado para exibir a solução de Ciência
 st.sidebar.subheader("Insira os Dados dos Clientes para Análise do Risco")
 
 # mapeando dados do usuário para cada atributo
-indice_inad = st.sidebar.number_input("Índice de Inadimplência", value=0)
+#Esses valores que eu coloquei "data.indice_inad.mean()" são valores de inicialização apenas
+#POderia ser 0
+indice_inad = st.sidebar.number_input("Índice de Inadimplência", value=data.indice_inad.mean())
 anot_cadastrais = st.sidebar.number_input("Anotações Cadastrais", value=data.anot_cadastrais.mean())
 class_renda = st.sidebar.number_input("Classificação da Renda", value=data.class_renda.mean())
 saldo_contas = st.sidebar.number_input("Saldo de Contas", value=data.saldo_contas.mean())
